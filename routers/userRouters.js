@@ -2,7 +2,6 @@ const express = require("express");
 const userController = require("../controllers/userControllers");
 const multer = require("multer");
 const path = require("path");
-const { stringify } = require("querystring");
 
 const router = express.Router();
 const storage = multer.diskStorage({
