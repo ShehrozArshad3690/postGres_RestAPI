@@ -37,7 +37,7 @@ const getUserById = async (req, res) => {
 
 const addUser = async (req, res) => {
   try {
-    if (!req.body.name || !req.body.age || !req.body.address) {
+    if (!req.body.name || !req.body.age || !req.body.address || !req.body.gender) {
       return res.status(404).send("please fill in the required fields");
     }
     const newUser = await prisma.user.create({
@@ -45,6 +45,7 @@ const addUser = async (req, res) => {
         name: req.body.name,
         age: req.body.age,
         address: req.body.address,
+        gender: req.body.gender
       },
     });
     return res.send(newUser);
@@ -67,6 +68,7 @@ const updateUser = async (req, res) => {
         name: req.body.name,
         age: req.body.age,
         address: req.body.address,
+        gender:req.body.gender
       },
       where: { id },
     });

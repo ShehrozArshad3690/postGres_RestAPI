@@ -12,10 +12,17 @@ model user {
   name    String?
   age     Int
   address String?
+  gender  Gender?  @default(Unknown)
 }
 
 model profile {
   id       Int    @id @default(autoincrement())
   email    String @unique
   password String
+}
+
+enum Gender{
+  Male
+  Female
+  Unknown
 }
