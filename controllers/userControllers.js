@@ -140,6 +140,15 @@ const signInUser=async(req, res) => {
     return res.status(500).send({message:'Internal server error'})
   }
 }
+
+const uploadFile=async (req,res)=>{
+  return res.status(201).json({
+    success:1,
+    message:'File Uploaded',
+    profile_url:`http://localhost:443/profile/${req.file.filename}`
+  })
+}
+
 module.exports = {
   getUsers,
   getUserById,
@@ -147,5 +156,6 @@ module.exports = {
   updateUser,
   deleteUser,
   signInUser,
-  signUpUser
+  signUpUser,
+  uploadFile
 };

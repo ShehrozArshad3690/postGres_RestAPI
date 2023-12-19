@@ -10,3 +10,5 @@ app.listen(443,()=>console.log('Server is running on port 443'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(userRouter);
+// exposing the upload/images folder
+app.use("/profile",express.static('uploads/images'));
