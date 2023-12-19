@@ -1,5 +1,4 @@
 const { PrismaClient } = require("@prisma/client");
-const { json } = require("body-parser");
 
 const prisma = new PrismaClient();
 // getUsers, getUserById, deleteUser, updateUser, addUser
@@ -92,7 +91,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-//TODO: Get all users that age is greater is 18 e.g i pass age in request other wise all users response.
 
 module.exports = {
   getUsers,
