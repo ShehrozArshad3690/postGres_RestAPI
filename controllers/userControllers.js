@@ -45,7 +45,8 @@ const addUser = async (req, res) => {
         name: req.body.name,
         age: req.body.age,
         address: req.body.address,
-        gender: req.body.gender
+        gender: req.body.gender,
+        isAvailable:req.body.isAvailable
       },
     });
     return res.send(newUser);
@@ -68,7 +69,8 @@ const updateUser = async (req, res) => {
         name: req.body.name,
         age: req.body.age,
         address: req.body.address,
-        gender:req.body.gender
+        gender:req.body.gender,
+        isAvailable:req.body.isAvailable
       },
       where: { id },
     });
